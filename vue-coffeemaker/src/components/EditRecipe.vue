@@ -14,7 +14,7 @@
           :value="recipe.id">
             {{recipe.name}}
         </b-form-radio>
-        <b-card-text v-if="recipes.length==0">No recipes found.</b-card-text>
+        <b-card-text v-if="recipes.length==0 && !loading">No recipes found.</b-card-text>
       </b-card>
       <b-card v-if="selected!=''">
         <b-form @submit="onSubmit" @reset="onReset" v-if="show">

@@ -133,6 +133,7 @@ export default {
     onSubmit (evt) {
       evt.preventDefault();
       this.editInventory();
+      this.onReset();
     },
     onReset (evt) {
       evt.preventDefault();

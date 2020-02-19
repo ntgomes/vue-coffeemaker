@@ -1,19 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Auth from '@okta/okta-vue'
 import About from '@/components/About';
 import EditInventory from '@/components/EditInventory';
 import AddRecipe from '@/components/AddRecipe';
 import DeleteRecipe from '@/components/DeleteRecipe';
 import EditRecipe from '@/components/EditRecipe';
 import MakeCoffee from '@/components/MakeCoffee';
-
-Vue.use(Auth, {
-  issuer: 'https://dev-881738.okta.com/oauth2/default',
-  client_id: '0oa24v71hg6BByTwx4x6',
-  redirect_uri: 'http://localhost:8080/implicit/callback',
-  scope: 'openid profile email'
-})
 
 Vue.use(Router);
 
@@ -24,46 +16,25 @@ const router = new Router({
     { path: '/about', component: About },
     {
       path: '/editInventory',
-      component: EditInventory,
-      meta: {
-        requiresAuth: true
-      }
+      component: EditInventory
     },
     {
       path: '/addRecipe',
-      component: AddRecipe,
-      meta: {
-        requiresAuth: true
-      }
+      component: AddRecipe
     },
     {
       path: '/deleteRecipe',
-      component: DeleteRecipe,
-      meta: {
-        requiresAuth: true
-      }
+      component: DeleteRecipe
     },
     {
       path: '/editRecipe',
-      component: EditRecipe,
-      meta: {
-        requiresAuth: true
-      }
+      component: EditRecipe
     },
     {
       path: '/makeCoffee',
-      component: MakeCoffee,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/implicit/callback',
-      component: Auth.handleCallback()
+      component: MakeCoffee
     }
   ]
 });
-
-router.beforeEach(Vue.prototype.$auth.authRedirectGuard());
 
 export default router;

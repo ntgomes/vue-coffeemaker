@@ -16,7 +16,7 @@
           :value="recipe.id">
             {{recipe.name}}
         </b-form-radio>
-        <b-card-text v-if="recipes.length==0">No recipes found.</b-card-text>
+        <b-card-text v-if="recipes.length==0 && !loading">No recipes found.</b-card-text>
       </b-card>
       <b-form-group id="input-group-1">
         <b-form-input inline required type="number" v-model="payment" placeholder="Enter payment amount here"></b-form-input>

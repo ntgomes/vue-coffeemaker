@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import axios from 'axios';
 
 const client = axios.create({
@@ -8,15 +7,10 @@ const client = axios.create({
 
 export default {
   async execute (method, resource, data) {
-    // inject the accessToken for each request
-    const accessToken = await Vue.prototype.$auth.getAccessToken()
     return client({
       method,
       url: resource,
-      data,
-      headers: {
-        Authorization: `Bearer ${accessToken}`
-      }
+      data
     }).then(req => req.data)
   },
   // API calls for Inventory

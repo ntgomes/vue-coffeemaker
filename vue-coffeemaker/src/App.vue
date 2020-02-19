@@ -3,8 +3,6 @@
     <b-row>
       <b-col>
         <h1 class='cm-home-header'>Coffee Maker</h1>
-        <p><em>You are logged {{ loggedIn ? 'in' : 'out' }}. </em>
-        <a href="#" v-if="loggedIn" @click.prevent="logout">Click here to log out.</a></p>
         <h4>Available Options</h4>
         <ul>
           <li>
@@ -39,34 +37,7 @@
 
 <script>
 export default {
-  name: 'app',
-  data () {
-    return {
-      loggedIn: false
-    }
-  },
-  async created () {
-    await this.refreshLogin();
-  },
-  watch: {
-    // everytime a route is changed refresh the activeUser
-    // eslint-disable-next-line quote-props
-    '$route': 'refreshLogin'
-  },
-  methods: {
-    login () {
-      this.$auth.loginRedirect();
-    },
-    async refreshLogin () {
-      const activeUser = await this.$auth.getUser();
-      this.loggedIn = (activeUser != null);
-    },
-    async logout () {
-      await this.$auth.logout();
-      await this.refreshLogin();
-      this.$router.push('/');
-    }
-  }
+  name: 'app'
 }
 </script>
 
