@@ -1,7 +1,7 @@
 # vue-coffeemaker
 ## Build Setup
 
-First, using MySQL Workbench, create a MySQL local instance at localhost port 3306. The username should be root and the password can be anything you want. Then create a database schema and name it `cm-vue`<br><br>
+First, using MySQL Workbench, create a MySQL local instance at localhost port 3306. The username should be root and the password can be anything you want. Then create a database schema and name it `cm-vue`.<br><br>
 Then, inside the vue-coffeemaker/src folder, create a folder called props. Inside that folder, create a file called `secureInfo.properties`. Copy the following contents into that file:
 ```properties
 [sequelize]
@@ -20,10 +20,11 @@ npm run dev
 
 In a separate Command Prompt/Terminal window, run the follow commands in the same directory:
 ``` bash
+# server at localhost:8081
 node ./src/server
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader). Also see the Developer's Guide in the wiki.
 <hr>
 Vue-CoffeeMaker is a simple single-page CRUD application that manages coffee recipes and inventory counts to a MySQL database. Once authenticated, users can update the inventory, add recipes, delete recipes, edit recipes, and make coffee orders using existing recipes and inventory counts.
 
