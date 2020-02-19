@@ -42,6 +42,7 @@ module.exports = {
     'no-async-promise-executor': 0,
     'no-misleading-character-class': 0,
     'no-useless-catch': 0,
-    'semi': 0
+    'semi': 0,
+    'linebreak-style': 0
   }
 }
